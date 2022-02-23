@@ -1,11 +1,14 @@
 package com.stacktoheap.maven_ci_example;
 
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PersonTest {
+class PersonTest {
 
+    @DisplayName("test Person toString method")
     @Test
     public void testPerson() {
         Person person = new Person("name", 20);
@@ -13,4 +16,8 @@ public class PersonTest {
         assertEquals(person.getName(), "name");
     }
 
+    @AfterAll
+    static void afterAll() {
+        System.out.println("Finished all tests !!!");
+    }
 }
